@@ -32,7 +32,15 @@ logs
 *.zip
 *.sql
 
-/node_modules
+# =========================
+# Folders
+# =========================
 
+/node_modules
+/rem
+
+# =========================
+# Files
+# =========================
 package.json
 package-lock.json
