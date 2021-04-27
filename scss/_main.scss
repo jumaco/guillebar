@@ -1,0 +1,179 @@
+
+body {
+  font-family: 'LobsterTwo';
+  color: #e8540d; }
+
+.logo img {
+  width: 100px;
+  height: 100px; }
+
+.modal-content {
+  background-image: url(../media/contact-us-image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center; }
+
+option {
+  font-family: 'LobsterTwo'; }
+
+footer {
+  background: linear-gradient(to top, orange, white); }
+  footer div {
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: space-evenly;
+    align-items: center; }
+    footer div ul {
+      list-style-type: none;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: end;
+      padding: 1em 1em; }
+      footer div ul a img {
+        width: 75px;
+        height: 75px;
+        padding: 5px; }
+
+footer img:hover {
+  transform: scale(1.1, 1.1); }
+
+.pieContacto {
+  font-size: 1.25rem;
+  text-decoration: none; }
+
+.vistazo {
+  height: 6rem;
+  background-image: url(../media/LeyPrimera.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2px; }
+
+p {
+  color: black; }
+
+.cerveza {
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto; }
+
+.muestra {
+  background: linear-gradient(to top, orange, white);
+  border-radius: 1em;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 50px; }
+
+.muestra--derecha {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between; }
+
+.muestra__img {
+  width: 300px;
+  height: auto;
+  margin-right: 30px;
+  border-radius: 1em; }
+
+.muestra__img--derecha {
+  margin-right: 0px;
+  margin-left: 30px; }
+
+.muestra__titulo {
+  font-size: 2rem;
+  margin-bottom: 20px; }
+
+.muestra__parrafo {
+  line-height: 28px;
+  font-size: 1rem;
+  color: black; }
+
+
+.comidasCaserasHead {
+    position:fixed;
+        div {
+          display:flex;
+          background-color: $fondo;
+          max-height: 100px;
+          div { 
+            /*padding:0 24px 0 24px;*/
+            a{
+
+              img{
+
+              }
+            }
+          }
+          nav{
+            width: 100%;
+            ul{
+            display: flex;
+            padding:20px;
+            justify-content: space-evenly;
+              li{
+                  list-style-type: none;
+                  display: flex;
+                  flex-flow: row nowrap;
+                   
+                  padding:20px;
+                a{
+
+                }
+              }
+            }
+          }
+      }
+  }
+
+.paddingTop{
+  padding-top:116px;
+}
+
+.comidasCaserasMain{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.comidasCaserasFooter {
+  background-color:$secundario;
+      ul{
+            list-style-type: none;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: end; 
+            padding:20px;
+        li{
+            padding:20px;
+
+          }
+        }
+      }
+
+
+@for $i from 1 through 6 {
+  h#{$i} {font-size:3em / $i;
+    color:$texto;
+    font-family: $font;
+  } 
+
+}
+
+p {
+  font-family: $fontConten;
+  font-weight: $font-regular; 
+}
+
+a{
+  color:$texto;
+  text-decoration: none;
+  &:hover{
+    color:$texto-secundario;
+    text-decoration: none;
+  }
+  font-family: $font;
+  font-weight: $font-regular;
+  font-size: 1.25em;
+}

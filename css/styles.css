@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&family=RocknRoll+One&display=swap");
+.comidasCaserasSection, h2, .section__vacios {
+  padding: 1em;
+  line-height: 1;
+  margin-bottom: 1em;
+  letter-spacing: 3px;
+  text-align: center;
+  color: grey;
+  background-color: antiquewhite;
+  box-shadow: 0 1px 2px grey;
+  border-radius: 10px; }
+
+h2 {
+  text-align: start;
+  color: orange;
+  background-color: beige; }
+
+.section__vacios {
+  width: 47.5%; }
+
+body {
+  font-family: 'LobsterTwo';
+  color: #e8540d; }
+
+.logo img {
+  width: 100px;
+  height: 100px; }
+
+.modal-content {
+  background-image: url(../media/contact-us-image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center; }
+
+option {
+  font-family: 'LobsterTwo'; }
+
+footer {
+  background: linear-gradient(to top, orange, white); }
+
+footer div {
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: space-evenly;
+  align-items: center; }
+
+footer div ul {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: end;
+  padding: 1em 1em; }
+
+footer div ul a img {
+  width: 75px;
+  height: 75px;
+  padding: 5px; }
+
+footer img:hover {
+  transform: scale(1.1, 1.1); }
+
+.pieContacto {
+  font-size: 1.25rem;
+  text-decoration: none; }
+
+.vistazo {
+  height: 6rem;
+  background-image: url(../media/LeyPrimera.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2px; }
+
+p {
+  color: black; }
+
+.cerveza {
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto; }
+
+.muestra {
+  background: linear-gradient(to top, orange, white);
+  border-radius: 1em;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 50px; }
+
+.muestra--derecha {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between; }
+
+.muestra__img {
+  width: 300px;
+  height: auto;
+  margin-right: 30px;
+  border-radius: 1em; }
+
+.muestra__img--derecha {
+  margin-right: 0px;
+  margin-left: 30px; }
+
+.muestra__titulo {
+  font-size: 2rem;
+  margin-bottom: 20px; }
+
+.muestra__parrafo {
+  line-height: 28px;
+  font-size: 1rem;
+  color: black; }
+
+.comidasCaserasHead {
+  position: fixed; }
+  .comidasCaserasHead div {
+    display: flex;
+    background-color: beige;
+    max-height: 100px; }
+    .comidasCaserasHead div div {
+      /*padding:0 24px 0 24px;*/ }
+    .comidasCaserasHead div nav {
+      width: 100%; }
+      .comidasCaserasHead div nav ul {
+        display: flex;
+        padding: 20px;
+        justify-content: space-evenly; }
+        .comidasCaserasHead div nav ul li {
+          list-style-type: none;
+          display: flex;
+          flex-flow: row nowrap;
+          padding: 20px; }
+
+.paddingTop {
+  padding-top: 116px; }
+
+.comidasCaserasMain {
+  align-items: center;
+  display: flex;
+  flex-direction: column; }
+
+.comidasCaserasFooter {
+  background-color: grey; }
+  .comidasCaserasFooter ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+    padding: 20px; }
+    .comidasCaserasFooter ul li {
+      padding: 20px; }
+
+h1 {
+  font-size: 3em;
+  color: orange;
+  font-family: "RocknRoll One", sans-serif; }
+
+h2 {
+  font-size: 1.5em;
+  color: orange;
+  font-family: "RocknRoll One", sans-serif; }
+
+h3 {
+  font-size: 1em;
+  color: orange;
+  font-family: "RocknRoll One", sans-serif; }
+
+h4 {
+  font-size: 0.75em;
+  color: orange;
+  font-family: "RocknRoll One", sans-serif; }
+
+h5 {
+  font-size: 0.6em;
+  color: orange;
+  font-family: "RocknRoll One", sans-serif; }
+
+h6 {
+  font-size: 0.5em;
+  color: orange;
+  font-family: "RocknRoll One", sans-serif; }
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; }
+
+a {
+  color: orange;
+  text-decoration: none;
+  font-family: "RocknRoll One", sans-serif;
+  font-weight: 400;
+  font-size: 1.25em; }
+  a:hover {
+    color: red;
+    text-decoration: none; }
+
+@font-face {
+  font-family: 'LobsterTwo';
+  src: url("fonts/LobsterTwo.woff2") format("woff2"), url("fonts/LobsterTwo.woff") format("woff"), url("fonts/LobsterTwo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+.type-light {
+  font-family: "RocknRoll One", sans-serif;
+  font-weight: 300; }
+
+.type-regular {
+  font-family: "RocknRoll One", sans-serif;
+  font-weight: 400; }
+
+.type-bold {
+  font-family: "RocknRoll One", sans-serif;
+  font-weight: 700; }
+
+.type-extrabold {
+  font-family: "RocknRoll One", sans-serif;
+  font-weight: 800; }
+
+.typeConten-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300; }
+
+.typeConten-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; }
+
+.typeConten-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700; }
+
+.typeConten-extrabold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800; }

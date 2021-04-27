@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'LobsterTwo';
+  src: url("fonts/LobsterTwo.woff2") format("woff2"), url("fonts/LobsterTwo.woff") format("woff"), url("fonts/LobsterTwo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&family=RocknRoll+One&display=swap');
+
+
+
+.type-light {
+	font-family: $font;
+	font-weight: $font-light;
+
+}
+
+.type-regular {
+	font-family: $font;
+	font-weight: $font-regular;
+
+}
+
+.type-bold {
+	font-family: $font;
+	font-weight: $font-bold;
+
+}
+
+.type-extrabold {
+	font-family: $font;
+	font-weight: $font-extra-bold;
+
+}
+
+
+.typeConten-light {
+	font-family: $fontConten;
+	font-weight: $font-light;
+
+}
+
+.typeConten-regular {
+	font-family: $fontConten;
+	font-weight: $font-regular;
+
+}
+
+.typeConten-bold {
+	font-family: $fontConten;
+	font-weight: $font-bold;
+
+}
+
+.typeConten-extrabold {
+	font-family: $fontConten;
+	font-weight: $font-extra-bold;
+
+}
+
