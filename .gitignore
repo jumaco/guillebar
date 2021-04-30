@@ -43,3 +43,6 @@ logs
 # =========================
 # Files
 # =========================
+
+package.json
+package-lock.json
