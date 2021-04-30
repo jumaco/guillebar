@@ -26,6 +26,11 @@ body {
   width: 100px;
   height: 100px; }
 
+header {
+  background-color: linear-gradient(to bottom, orange, white);
+  position: fixed;
+  z-index: 100; }
+
 .modal-content {
   background-image: url(../media/contact-us-image.jpg);
   background-repeat: no-repeat;
@@ -40,7 +45,7 @@ footer {
 
 footer div {
   display: flex;
-  flex-flow: row-reverse nowrap;
+  flex-flow: row-reverse wrap;
   justify-content: space-evenly;
   align-items: center; }
 
@@ -48,10 +53,14 @@ footer div ul {
   list-style-type: none;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: end;
-  padding: 1em 1em; }
+  justify-content: space-evenly;
+  padding: 1em 1em;
+  min-width: 369px; }
 
-footer div ul a img {
+footer div div {
+  min-width: 369px; }
+
+footer div ul a img, footer div ul .buttonContac img {
   width: 75px;
   height: 75px;
   padding: 5px; }
@@ -185,15 +194,33 @@ p {
   font-family: "Roboto", sans-serif;
   font-weight: 400; }
 
-a {
+a, .buttonContac {
   color: orange;
   text-decoration: none;
   font-family: "RocknRoll One", sans-serif;
   font-weight: 400;
   font-size: 1.25em; }
-  a:hover {
+  a:hover, .buttonContac:hover {
     color: red;
     text-decoration: none; }
+
+main {
+  padding-top: 130px; }
+
+.fondoGradTop {
+  background: linear-gradient(to top, orange, white); }
+
+.fondoGradbott {
+  background: linear-gradient(to bottom, orange, white); }
+
+.barriles {
+  background-image: url(../media/barriles.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+.buttonContac {
+  background-color: #e8540d; }
 
 @font-face {
   font-family: 'LobsterTwo';
