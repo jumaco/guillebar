@@ -12,7 +12,7 @@
 
 h2 {
   text-align: start;
-  color: orange;
+  color: #ef6009;
   background-color: beige; }
 
 .section__vacios {
@@ -79,9 +79,6 @@ footer img:hover {
   background-size: cover;
   background-position: center;
   padding: 2px; }
-
-p {
-  color: black; }
 
 .cerveza {
   max-width: 1000px;
@@ -162,44 +159,45 @@ p {
 
 h1 {
   font-size: 3em;
-  color: orange;
+  color: #ef6009;
   font-family: "RocknRoll One", sans-serif; }
 
 h2 {
   font-size: 1.5em;
-  color: orange;
+  color: #ef6009;
   font-family: "RocknRoll One", sans-serif; }
 
 h3 {
   font-size: 1em;
-  color: orange;
+  color: #ef6009;
   font-family: "RocknRoll One", sans-serif; }
 
 h4 {
   font-size: 0.75em;
-  color: orange;
+  color: #ef6009;
   font-family: "RocknRoll One", sans-serif; }
 
 h5 {
   font-size: 0.6em;
-  color: orange;
+  color: #ef6009;
   font-family: "RocknRoll One", sans-serif; }
 
 h6 {
   font-size: 0.5em;
-  color: orange;
+  color: #ef6009;
   font-family: "RocknRoll One", sans-serif; }
 
 p {
+  color: black;
   font-family: "Roboto", sans-serif;
   font-weight: 400; }
 
 a, .buttonContac {
-  color: orange;
+  color: #ef6009;
   text-decoration: none;
   font-family: "RocknRoll One", sans-serif;
-  font-weight: 400;
-  font-size: 1.25em; }
+  font-weight: 700;
+  font-size: 1.75em; }
   a:hover, .buttonContac:hover {
     color: red;
     text-decoration: none; }
@@ -218,9 +216,6 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center; }
-
-.buttonContac {
-  background-color: #e8540d; }
 
 @font-face {
   font-family: 'LobsterTwo';

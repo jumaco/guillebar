@@ -11,10 +11,8 @@
         <title>Cervezas Artesanales</title>
     </head>
 
-
-
     <body>
-        <header class="container-fluid fondo">
+        <header class="container-fluid fondoGradbott">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand logo" href="index.html">
                     <img src="media/logo.png" alt="logo">
@@ -30,25 +28,18 @@
                         </li>
                         <li class="nav-item active dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cervezas</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu border-0 fondoGradTop" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="cervezasArtesanales.html#goldenBeer">Golden</a>
                                 <a class="dropdown-item" href="cervezasArtesanales.html#scottishBeer">Scottish</a>
                                 <a class="dropdown-item" href="cervezasArtesanales.html#redipaBeer">Red IPA</a>
                                 <a class="dropdown-item" href="cervezasArtesanales.html#americanipaBeer">American IPA</a>
                                 <a class="dropdown-item" href="vistazo.html#porterBeer">Porter</a>
-                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="cervezasArtesanales.html">Hecha un vistazo</a>
                                 <div class="vistazo"></div>
                             </div>
                         </li>
-                        <li class="nav-item active dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comidas</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="comidasCaseras.html">Comidas</a>
-                                <a class="dropdown-item" href="comidasCaseras.html">Minutas</a>
-                            <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="comidasCaseras.html">Menú</a>
-                            </div>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="comidasCaseras.html">Menú<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="index.html">Eventos<span class="sr-only">(current)</span></a>
@@ -56,10 +47,11 @@
                     </ul>
 
 <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Contacto">Contacto</button>
+                    <button type="button" class="btn buttonContac" data-toggle="modal" data-target="#Contacto">Contacto</button>
                 </div>
             </nav>
         </header>
+
         <main class="container py-3">
             <div class="row row-cols-1">
                 <section class="cerveza" id="goldenBeer">
