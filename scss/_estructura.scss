@@ -13,7 +13,7 @@
 	letter-spacing: 3px;
 	text-align: center;
 	color:$textoParrafo;
-	background-color:$secundarioParrafo;
+	background-color:$fondo;
 	@include sombra;
 	@include borde;
 }
