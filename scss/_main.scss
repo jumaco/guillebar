@@ -1,12 +1,9 @@
-html {
-  background-color:$fondo;
-
-}
-
 
 body {
   font-family: 'LobsterTwo';
-  color: #e8540d; }
+  color: #e8540d; 
+  background-color:$secundarioParrafo;
+}
 
 .logo img {
   width: 100px;
@@ -68,16 +65,19 @@ footer img:hover {
 .cerveza {
   max-width: 1000px;
   width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto;
+ }
 
 .muestra {
-  background: linear-gradient(to top, orange, white);
+  background: $fondo;
   border-radius: 1em;
   padding: 20px;
   display: flex;
   align-items: center;
   position: relative;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 5px; }
 
 .muestra--derecha {
   display: flex;
@@ -206,8 +206,8 @@ main{
 }
 
 
-.barriles {
-  background-image: url(../media/barriles.png);
+#Contacto {
+  background-image: url(../media/barriles2.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
