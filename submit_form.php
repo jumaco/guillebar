@@ -11,73 +11,38 @@ require 'vendor/autoload.php';
 //Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
-if(isset($_POST['contactFrmSubmit']) && !empty($_POST['name']) && !empty($_POST['email']) && (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) && !empty($_POST['message'])){
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'front.fullstack@gmail.com';                     //SMTP username
-    $mail->Password   = 'Front2021';                         //SMTP password
-    $mail->SMTPSecure = tls;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-    $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+// Form Data
+$fullname = $_POST['fullname'] ;
+$email = $_POST['email'] ;
+$message = $_POST['message'] ;
 
-    //Recipients
-    $mail->setFrom('front.fullstack@gmail.com', 'LoDeFuilleBar'); // Hacer coincidir con el username. (preferentemente)
-    $mail->addAddress('juan.manuel.corral@hotmail.com', 'Juan');     //Add a recipient
-    //$mail->addAddress('ellen@example.com');               //Name is optional
-    //$mail->addReplyTo('info@example.com', 'Information');
-    //$mail->addCC('cc@example.com');
-    //$mail->addBCC('bcc@example.com');
+$mailbody = 'New Lead Enquiry' . PHP_EOL . PHP_EOL .
+            'Name: ' . $fullname . '' . PHP_EOL .
+            'Message: ' . $message . '' . PHP_EOL;
 
-    //Attachments
-    //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+$mail->isSMTP();                                      // Set mailer to use SMTP
+$mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
+$mail->SMTPAuth = true; // Enable SMTP authentication
+$mail->Username = 'front.fullstack@gmail.com'; // SMTP username
+$mail->Password = 'Front2021'; // SMTP password
+$mail->SMTPSecure = 'tls'; // Enable TLS encryption, `ssl` also accepted
+$mail->Port = 587; // TCP port to connect to
 
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
- // Submitted form data
-    $name   = $_POST['name'];
-    $email  = $_POST['email'];
-    $message= $_POST['message'];
-    
-    /*
-     * Send email to admin
-     */
-    
-    $to     = 'admin@example.com';
-    $subject= 'Contact Request Submitted';
-    
-    $htmlContent = '
-    <h4>Contact request has submitted at CodexWorld, details are given below.</h4>
-    <table cellspacing="0" style="width: 300px; height: 200px;">
-        <tr>
-            <th>Name:</th><td>'.$name.'</td>
-        </tr>
-        <tr style="background-color: #e0e0e0;">
-            <th>Email:</th><td>'.$email.'</td>
-        </tr>
-        <tr>
-            <th>Message:</th><td>'.$message.'</td>
-        </tr>
-    </table>';
-    
-    // Set content-type header for sending HTML email
-    $headers = "MIME-Version: 1.0" . "rn";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "rn";
-    
-    // Additional headers
-    $headers .= 'From: CodexWorld<sender@example.com>' . "rn";
-    
-    // Send email
-    if(mail($to,$subject,$htmlContent,$headers)){
-        $status = 'ok';
-    }else{
-        $status = 'err';
-    }
-    
-    // Output status
-    echo $status;die;
+$mail->setFrom('front.fullstack@gmail.com', 'LoDeFuilleBar'); // Admin ID
+$mail->addAddress('juan.manuel.corral@hotmail.com', 'Juan'); // Business Owner ID
+$mail->addReplyTo($email, $fullname); // Form Submitter's ID
+
+$mail->isHTML(false); // Set email format to HTML
+
+$mail->Subject = 'New Lead Enquiry';
+$mail->Body    = $mailbody;
+
+if(mail($to,$subject,$htmlContent,$headers)){
+    $status = 'ok';
+}else{
+    $status = 'err';
 }
-
+    
+// Output status
+echo $status;die;
 ?>
