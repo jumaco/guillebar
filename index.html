@@ -151,47 +151,34 @@
                     </div>
 
                     <div class="modal-body">
-                        <form class="needs-validation" method="POST" action="email.php" novalidate>
+                        <form role="form" novalidate>
                             
                             <div class="form-group">
-                                <label for="validatioCustom01">¿Cómo te llamas?</label>
-                                <input type="text" class="form-control" name="inp_nombre" autocomplete="off" placeholder="Jardani Jovonovich" id="validatioCustom01" value="" required>
+                                <label for="inputName">¿Cómo te llamas?</label>
+                                <input type="text" class="form-control" name="inp_nombre" autocomplete="off" placeholder="Jardani Jovonovich" id="inputName" value="" >
                                 <div class="valid-feedback">
                                     Gracias!
                                 </div>
                             </div>
                             
                             <div class="form-group">
-                                <label for="validatioCustom02">E-mail</label>
-                                <input type="email" class="form-control" name="inp_email" id="validatioCustom02" autocomplete="off" placeholder="johnwick@continental.com"  value="" required>
+                                <label for="inputEmail">E-mail</label>
+                                <input type="email" class="form-control" name="inp_email" id="inputEmail" autocomplete="off" placeholder="johnwick@continental.com"  value="" >
                                 <div class="valid-feedback">
                                     Gracias!
                                 </div>
                             </div>
                             
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">¿Cómo nos conociste?</label>
-                                <select name="inp_nexo" class="form-control" id="exampleFormControlSelect1">
-                                    <option>Evento</option>
-                                    <option>Folleto</option>
-                                    <option>Boca a boca</option>
-                                    <option>Youtube</option>
-                                    <option>Facebook</option>
-                                    <option>Instagram</option>
-                                </select>
-                                <div class="valid-feedback">
-                                    ok!
-                                </div>
-                            </div>
+
 
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Consulta Comenta Critica</label>
-                                <textarea class="form-control" name="inp_mensaje" id="exampleFormControlTextarea1" autocomplete="off" rows="3" required></textarea>
+                                <label for="inputMessage">Consulta Comenta Critica</label>
+                                <textarea class="form-control" name="inp_mensaje" id="inputMessage" autocomplete="off" rows="3" ></textarea>
                             </div>
                             
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary">Enviar</button>
+                                <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">Enviar</button>
                             </div>                        
                         
                         </form>
@@ -203,5 +190,54 @@
         <script src="dist\jquery\dist/jquery.slim.min.js"></script>
         <script src="dist\popper.js\dist/popper.min.js"></script>
         <script src="dist\bootstrap\dist\js/bootstrap.bundle.min.js"></script>
+
+        <script>
+        function submitContactForm(){
+            var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+.)+[A-Z]{2,4}$/i;
+            var name = $('#inputName').val();
+            var email = $('#inputEmail').val();
+            var message = $('#inputMessage').val();
+            if(name.trim() == '' ){
+                alert('Please enter your name.');
+                $('#inputName').focus();
+                return false;
+            }else if(email.trim() == '' ){
+                alert('Please enter your email.');
+                $('#inputEmail').focus();
+                return false;
+            }else if(email.trim() != '' && !reg.test(email)){
+                alert('Please enter valid email.');
+                $('#inputEmail').focus();
+                return false;
+            }else if(message.trim() == '' ){
+                alert('Please enter your message.');
+                $('#inputMessage').focus();
+                return false;
+            }else{
+                $.ajax({
+                    type:'POST',
+                    url:'submit_form.php',
+                    data:'contactFrmSubmit=1&name='+name+'&email='+email+'&message='+message,
+                    beforeSend: function () {
+                        $('.submitBtn').attr("disabled","disabled");
+                        $('.modal-body').css('opacity', '.5');
+                    },
+                    success:function(msg){
+                        if(msg == 'ok'){
+                            $('#inputName').val('');
+                            $('#inputEmail').val('');
+                            $('#inputMessage').val('');
+                            $('.statusMsg').html(<'span style="color:green;">Thanks for contacting us, we ll get back to you soon.</span>');
+                        }else{
+                            $('.statusMsg').html('<span style="color:red;">Some problem occurred, please try again.</span>');
+                        }
+                        $('.submitBtn').removeAttr("disabled");
+                        $('.modal-body').css('opacity', '');
+                    }
+                });
+            }
+        }
+        </script>
+
     </body>
 </html>
