@@ -1,15 +1,7 @@
 <?php
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+require 'mailer/PHPMailerAutoload.php';
 
-//Load Composer's autoloader
-require 'vendor/autoload.php';
-
-//Instantiation and passing `true` enables exceptions
-$mail = new PHPMailer(true);
+$mail = new PHPMailer;
 
 // Form Data
 $fullname = $_POST['fullname'] ;
@@ -37,12 +29,9 @@ $mail->isHTML(false); // Set email format to HTML
 $mail->Subject = 'New Lead Enquiry';
 $mail->Body    = $mailbody;
 
-if(mail($to,$subject,$htmlContent,$headers)){
-    $status = 'ok';
-}else{
-    $status = 'err';
+if(!$mail->send()) {
+    echo 'Message could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+} else {
+    echo 'Message has been sent';
 }
-    
-// Output status
-echo $status;die;
-?>

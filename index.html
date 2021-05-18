@@ -165,7 +165,7 @@
                 return false;
             }else{
                 $.ajax({
-                    type:'POST',
+                    type:'GET',
                     url:'submit_form.php',
                     data:'contactFrmSubmit=1&name='+name+'&email='+email+'&message='+message,
                     beforeSend: function () {
@@ -205,25 +205,19 @@
                             
                             <div class="form-group">
                                 <label for="inputName">¿Cómo te llamas?</label>
-                                <input type="text" class="form-control" name="inp_nombre" autocomplete="off" placeholder="Jardani Jovonovich" id="inputName" value="" >
-                                <div class="valid-feedback">
-                                    Gracias!
-                                </div>
+                                <input type="text" class="form-control" name="fullname" autocomplete="off" placeholder="Jardani Jovonovich" id="inputName">
                             </div>
                             
                             <div class="form-group">
                                 <label for="inputEmail">E-mail</label>
-                                <input type="email" class="form-control" name="inp_email" id="inputEmail" autocomplete="off" placeholder="johnwick@continental.com"  value="" >
-                                <div class="valid-feedback">
-                                    Gracias!
-                                </div>
+                                <input type="email" class="form-control" name="email" id="inputEmail" autocomplete="off" placeholder="johnwick@continental.com">
                             </div>
                             
 
 
                             <div class="form-group">
                                 <label for="inputMessage">Consulta Comenta Critica</label>
-                                <textarea class="form-control" name="inp_mensaje" id="inputMessage" autocomplete="off" rows="3" ></textarea>
+                                <textarea class="form-control" name="message" id="inputMessage" autocomplete="off" rows="3" ></textarea>
                             </div>
                             
                             <div class="modal-footer">
