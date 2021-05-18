@@ -8,9 +8,6 @@ $fullname = $_POST['fullname'] ;
 $email = $_POST['email'] ;
 $message = $_POST['message'] ;
 
-$mailbody = 'New Lead Enquiry' . PHP_EOL . PHP_EOL .
-            'Name: ' . $fullname . '' . PHP_EOL .
-            'Message: ' . $message . '' . PHP_EOL;
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
@@ -24,14 +21,17 @@ $mail->setFrom('front.fullstack@gmail.com', 'LoDeFuilleBar'); // Admin ID
 $mail->addAddress('juan.manuel.corral@hotmail.com', 'Juan'); // Business Owner ID
 $mail->addReplyTo($email, $fullname); // Form Submitter's ID
 
-$mail->isHTML(false); // Set email format to HTML
+$mail->isHTML(true);                                  //Set email format to HTML
+$mail->Subject = 'Consulta de: '.$_POST['fullname'];
+$mail->Body    = 'Nombre: '.$_POST['fullname'].'<br>Mensaje: '.$_POST['message'].'<br>Email: '.$_POST['email'];
 
-$mail->Subject = 'New Lead Enquiry';
-$mail->Body    = $mailbody;
-
-if(!$mail->send()) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
-} else {
-    echo 'Message has been sent';
+// Send email
+if(mail($to,$subject,$htmlContent,$headers)){
+    $status = 'ok';
+}else{
+    $status = 'err';
+}
+    
+// Output status
+echo $status;die;
 }
