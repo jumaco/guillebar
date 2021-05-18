@@ -35,7 +35,7 @@ try {
     //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
     //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
+/*    $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Consulta de: '.$_POST['inputName'];
     $mail->Body    = 'Nombre: '.$_POST['inputName'].'<br>Mensaje: '.$_POST['inputMessage'].'<br>Email: '.$_POST['inputEmail'];
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
@@ -45,7 +45,7 @@ try {
 } catch (Exception $e) {
     //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     header("location: error.html");
-}
+}*/
 
 
 
