@@ -149,19 +149,29 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+
                     <div class="modal-body">
-                        <form>
+                        <form class="needs-validation" method="POST" action="email.php" novalidate>
+                            
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">¿Cómo te llamas?</label>
-                                <input type="text" class="form-control" name="CAMPO NOMBRE" placeholder="Jardani Jovonovich">
+                                <label for="validatioCustom01">¿Cómo te llamas?</label>
+                                <input type="text" class="form-control" name="inp_nombre" autocomplete="off" placeholder="Jardani Jovonovich" id="validatioCustom01" value="" required>
+                                <div class="valid-feedback">
+                                    Gracias!
+                                </div>
                             </div>
+                            
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Email</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <label for="validatioCustom02">E-mail</label>
+                                <input type="email" class="form-control" name="inp_email" id="validatioCustom02" autocomplete="off" placeholder="johnwick@continental.com"  value="" required>
+                                <div class="valid-feedback">
+                                    Gracias!
+                                </div>
                             </div>
+                            
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">¿Cómo nos conociste?</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
+                                <select name="inp_nexo" class="form-control" id="exampleFormControlSelect1">
                                     <option>Evento</option>
                                     <option>Folleto</option>
                                     <option>Boca a boca</option>
@@ -169,15 +179,21 @@
                                     <option>Facebook</option>
                                     <option>Instagram</option>
                                 </select>
+                                <div class="valid-feedback">
+                                    ok!
+                                </div>
                             </div>
+
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Consulta Comenta Critica</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control" name="inp_mensaje" id="exampleFormControlTextarea1" autocomplete="off" rows="3" required></textarea>
                             </div>
+                            
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                 <button type="button" class="btn btn-primary">Enviar</button>
                             </div>                        
+                        
                         </form>
                     </div>
 

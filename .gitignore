@@ -38,6 +38,7 @@ logs
 
 /node_modules
 /rem
+/vendor
 
 
 # =========================

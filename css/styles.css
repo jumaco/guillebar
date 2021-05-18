@@ -221,6 +221,9 @@ main {
 .backCard {
   background-color: #f8f8d8; }
 
+textarea.form-control {
+  resize: none; }
+
 @font-face {
   font-family: 'LobsterTwo';
   src: url("fonts/LobsterTwo.woff2") format("woff2"), url("fonts/LobsterTwo.woff") format("woff"), url("fonts/LobsterTwo.ttf") format("truetype");
