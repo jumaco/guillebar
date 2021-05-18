@@ -1,9 +1,9 @@
 <?php
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+//use PHPMailer\PHPMailer\PHPMailer;
+//use PHPMailer\PHPMailer\SMTP;
+//use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';
@@ -37,10 +37,7 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Consulta de: '.$_POST['inputName'];
-
-
-
-/*    $mail->Body    = 'Nombre: '.$_POST['inputName'].'<br>Mensaje: '.$_POST['inputMessage'].'<br>Email: '.$_POST['inputEmail'];
+    $mail->Body    = 'Nombre: '.$_POST['inputName'].'<br>Mensaje: '.$_POST['inputMessage'].'<br>Email: '.$_POST['inputEmail'];
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
@@ -49,7 +46,6 @@ try {
     //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     header("location: error.html");
 }
-*/
 
 
 
@@ -63,8 +59,8 @@ if(isset($_POST['contactFrmSubmit']) && !empty($_POST['name']) && !empty($_POST[
     /*
      * Send email to admin
      */
-//    $to     = 'admin@example.com';
-//    $subject= 'Contact Request Submitted';
+    $to     = 'admin@example.com';
+    $subject= 'Contact Request Submitted';
     
     $htmlContent = '
     <h4>Contact request has submitted at CodexWorld, details are given below.</h4>
