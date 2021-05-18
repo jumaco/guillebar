@@ -25,10 +25,10 @@ $mail->Subject = 'Consulta de: '.$_POST['fullname'];
 $mail->Body    = 'Nombre: '.$_POST['fullname'].'<br>Mensaje: '.$_POST['message'].'<br>Email: '.$_POST['email'];
 
 // Send email
-if(mail($to,$subject,$htmlContent,$headers)){
-    $status = 'ok';
-}else{
+if(!$mail->send()) {
     $status = 'err';
+}else{
+    $status = 'ok';
 }
     
 // Output status
