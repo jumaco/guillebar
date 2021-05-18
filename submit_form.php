@@ -8,9 +8,14 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
+// Submitted form data
+$name   = $_POST['name'];
+$email  = $_POST['email'];
+$message= $_POST['message'];
+
 //Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
-$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+$mail->SMTPDebug = 2;                     //Enable verbose debug output
 $mail->isSMTP();                                            //Send using SMTP
 $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -21,8 +26,21 @@ $mail->Port       = 465;                                    //TCP port to connec
 $mail->setFrom('front.fullstack@gmail.com', 'LoDeGuilleBar'); // Admin ID
 $mail->addAddress('juan.manuel.corral@hotmail.com', 'Juan'); // Business Owner ID
 $mail->isHTML(true);                                  //Set email format to HTML
-$mail->Subject = 'Consulta de: '.$_POST['fullname'];
-$mail->Body    = 'Nombre: '.$_POST['fullname'].'<br>Mensaje: '.$_POST['message'].'<br>Email: '.$_POST['email'];
+$mail->Subject = 'Consulta de: '.$_POST['name'];
+$mail->Body    =    '
+                    <h4>Contact request has submitted at CodexWorld, details are given below.</h4>
+                    <table cellspacing="0" style="width: 300px; height: 200px;">
+                        <tr>
+                            <th>Name:</th><td>'.$name.'</td>
+                        </tr>
+                        <tr style="background-color: #e0e0e0;">
+                            <th>Email:</th><td>'.$email.'</td>
+                        </tr>
+                        <tr>
+                            <th>Message:</th><td>'.$message.'</td>
+                        </tr>
+                    </table>';
+
 
 // Send email
 if(!$mail->send()) {
@@ -33,4 +51,3 @@ if(!$mail->send()) {
     
 // Output status
 echo $status;die;
-}
