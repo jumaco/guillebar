@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&family=RocknRoll+One&display=swap");
-.comidasCaserasSection, h2, .section__vacios {
+.comidasCaserasSection, .section__vacios {
   padding: 1em;
   line-height: 1;
   margin-bottom: 1em;
@@ -9,11 +9,6 @@
   background-color: #f8f8d8;
   box-shadow: 0 1px 2px grey;
   border-radius: 5px; }
-
-h2 {
-  text-align: start;
-  color: #ef6009;
-  background-color: #f8f8d8; }
 
 .section__vacios {
   width: 47.5%; }
@@ -201,7 +196,16 @@ a, .buttonContac {
   font-size: 1.75em; }
   a:hover, .buttonContac:hover {
     color: red;
-    text-decoration: none; }
+    text-decoration: none;
+    border: 0px; }
+
+.colortx {
+  color: #ef6009; }
+  .colortx:hover {
+    color: red;
+    background-color: transparent; }
+  .colortx:focus {
+    background-color: none; }
 
 main {
   padding-top: 130px; }
@@ -223,6 +227,19 @@ main {
 
 textarea.form-control {
   resize: none; }
+
+.btn, .btn:active, .btn:visited, .btn:focus {
+  color: #ef6009;
+  white-space: normal;
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none; }
+
+.btn:hover {
+  color: red;
+  border: 1px solid transparent; }
 
 @font-face {
   font-family: 'LobsterTwo';

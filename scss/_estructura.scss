@@ -18,13 +18,6 @@
 	@include borde;
 }
 
-h2{
-	@extend .comidasCaserasSection;
-	text-align: start;
-	color:$texto;
-	background-color:$fondo;
-}
-
 .section__vacios{
 	@extend .comidasCaserasSection;
 	width: $maxWdth/2;

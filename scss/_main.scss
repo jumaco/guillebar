@@ -13,6 +13,7 @@ header{
   background-color:$fondo-gradBott;
   position: fixed;
   z-index: 100;
+
 }
 
 .modal-content {
@@ -177,14 +178,28 @@ a{
   &:hover{
     color:$texto-secundario;
     text-decoration: none;
+    border:0px;
   }
   font-family: $font;
   font-weight: $font-bold;
   font-size: 1.75em;
 }
 
+.colortx{
+  color:$texto;
+  &:hover{
+    color:$texto-secundario;
+    background-color:transparent;
+  }
+  &:focus{
+    background-color:none;
+  }
+}
+
+
 main{
   padding-top:130px;
+
 
 }
 
@@ -217,5 +232,21 @@ main{
 
 textarea.form-control {
   resize: none;
+}
+
+
+.btn, .btn:active, .btn:visited, .btn:focus {
+  color: $texto;
+  white-space: normal;
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none;
+  }
+
+.btn:hover {
+  color: $texto-secundario;
+  border: 1px solid transparent;
 }
 
