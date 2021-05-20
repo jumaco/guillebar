@@ -88,8 +88,8 @@ footer img:hover {
 .muestra__img {
   width: 300px;
   height: auto;
-  margin-right: 30px;
-  border-radius: 1em; }
+
+ }
 
 .muestra__img--derecha {
   margin-right: 0px;
@@ -250,3 +250,18 @@ textarea.form-control {
   border: 1px solid transparent;
 }
 
+.blockquote-footer {
+  color:black;
+}
+
+.card-header{
+  padding:.5rem;
+  h3{
+    margin-bottom:0;
+  }
+}
+
+blockquote p{
+  font-size: 0.75em;
+  margin-bottom:.5rem;
+}
